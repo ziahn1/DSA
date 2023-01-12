@@ -6,12 +6,9 @@ public class DuplicateLessThan3 {
     public static ArrayList<Integer> isDuplicate(int[] arr){
           int freq=1;
           ArrayList<Integer> list = new ArrayList<>();
-          int[] output = new int[arr.length];
           for(int i=1;i<arr.length;i++){
             if(arr[i]!=arr[i-1]){
-                if(freq<3){
-                    list.add(arr[i-1]);
-                }
+                addElement(arr, list, i-1, freq);
                 freq=1;
             }
             else{
@@ -19,13 +16,23 @@ public class DuplicateLessThan3 {
             }
           }
           if(freq<3){
-            list.add(arr[arr.length-1]);
+            addElement(arr, list, arr.length-1, freq);
           }
 
          return list;
     }
+
+    public static void addElement(int[] arr,ArrayList<Integer> list, int index,int freq){
+        if(freq==1){
+            list.add(arr[index]);
+        }
+        if(freq==2){
+            list.add(arr[index]);
+            list.add(arr[index]);
+        }
+    }
     public static void main(String[] args) {
-        int[] input = {1,2,3,3};
+        int[] input = {1,2,3,3,4,4,5,5,5,5};
         ArrayList<Integer> result= isDuplicate(input);
         int size = result.size();
         for(int i=0;i<size;i++){

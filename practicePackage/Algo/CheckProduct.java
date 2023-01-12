@@ -1,9 +1,5 @@
 package practicePackage.Algo;
 
-import java.util.NoSuchElementException;
-
-import javax.lang.model.element.Element;
-
 public class CheckProduct {
      public static Pair isProductExist(int[] arr,int k){
         for(int i=0;i<arr.length;i++){
