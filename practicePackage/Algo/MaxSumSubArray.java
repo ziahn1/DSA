@@ -18,7 +18,7 @@ public class MaxSumSubArray {
         return maxSum;
     }
     public static void main(String[] args) {
-        int[] arr={5,-4,-2,6,-1};
+        int[] arr={4,-7,6,-2,-14};
         int res = maxSum(arr);
         System.out.println(res);
     }
