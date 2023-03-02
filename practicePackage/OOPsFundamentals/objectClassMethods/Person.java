@@ -3,11 +3,6 @@ package practicePackage.OOPsFundamentals.objectClassMethods;
 import javax.swing.text.AttributeSet.ColorAttribute;
 
 public class Person implements Cloneable{
-    static final boolean COMPACT_STRINGS;
-
-    static {
-        COMPACT_STRINGS = true;
-    }
 
     private int personVoterId;
     private int age;
@@ -47,21 +42,21 @@ public class Person implements Cloneable{
         System.out.println("toString called");
         return super.toString();  
     }
-    // @Override
-    // public int hashCode() {
-    //     System.out.println("hashcode called");
-    //     return getPersonVoterId();
-    // }
-    // @Override
-    // public boolean equals(Object o) {
-    //    Person p = (Person)o;
+    @Override
+    public int hashCode() {
+        System.out.println("hashcode called");
+        return getPersonVoterId();
+    }
+    @Override
+    public boolean equals(Object o) {
+       Person p = (Person)o;
        
-    //    if(this.getPersonVoterId()==p.getPersonVoterId()){
-    //     return true;
-    //    }
+       if(this.getPersonVoterId()==p.getPersonVoterId()){
+        return true;
+       }
 
-    //    return false;
-    // }
+       return false;
+    }
 
     
 
